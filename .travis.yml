@@ -20,3 +20,14 @@ script:
 - make
 after_failure:
 - cat BlockChainAALP.log
+before_deploy:
+- git fetch --tags
+deploy:
+  provider: releases
+  api_key:
+    secure: o+Xt6QpoM2KxAh6IP3GJfqKY50Qtqb/rCUNB9b0KKYirXiRRieXgwo7vxVDUUjv+/WcRvpoFbMWyPRjs3opdLoVzqKb9ws2kXi/S1k+soq1GhDMpmEILDHrPh0GmfBBpyf9UPywy15Gn6/nnSgq4zDJcNtHZMIyOmlYILfXCAF/3ua93213mGsiOmP44lIqRipGavkuvzn3CSn0yLKoYFMLMn/QWPdYSxllXixGeO1QvbAXrwIBBjyfjj2XNvBoiN+IXRjs434tqsI2opcgMoroLSZFCvNrznewutMOi9KjYOzpkpN7EX/FMEVdHkKrnzZPRUTztM7C/3HCo29Rr3wW+g8DeBtJ0GT0IovGIBTiFJ5w369/A7hCu1e47NyHAtRWiZO/hUU9qe8RmExJTQggoyB2bUiq1ybK3hTsC+SA5SiUkpOZxsHHd5/huNMlQUIMi/c1zZopYLFQszU1YwO+19MUqVTbWyBthFBE8RY3y9WK0x/qDMVEAjP/Rd3BTI/hqLFsqwEPLnc5rsm6BYoayTD+efWmrFwuxa68bBvTRakVf9gqvbBAvfGcSHYFNW7POjRC3V2VXeeHlXrmmd7ugPl9sYUCKfWEjZV/RuU01TVylcyaV+0JG0HnABZo/aFW3daoBnMlFMwxMpYOC9eG5Faw20MgpcU87prsWgPI=
+  file: BlockChainAALP.pdf
+  skip_cleanup: true
+  on:
+    repo: Polpetta/PresentazioneBlockChainAALP
+    tags: true
